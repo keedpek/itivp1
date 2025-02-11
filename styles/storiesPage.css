@@ -1,0 +1,123 @@
+@font-face {
+  font-family: "Euclid";
+  src: url("../fonts/euclid-flex.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Euclid";
+}
+
+.stories-page-main-section {
+  width: 100%;
+  height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 100% 100%;
+  background-image: url("../images/stories-main-bg.png");
+  position: relative;
+  &::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 900px;
+    background-color: #0000002b;
+  }
+}
+
+.main-section-text-container {
+  text-align: center;
+  width: 70%;
+  z-index: 10;
+  & > h2 {
+    color: #fff;
+    font-weight: 800;
+    font-size: 40pt;
+  }
+}
+
+.stories-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 50px 5%;
+  gap: 40px;
+  margin-bottom: 100px;
+  & > h2 {
+    background: linear-gradient(135deg, #5c7bd8 0%, #4169e1 100%);
+    background-clip: text;
+    color: transparent;
+    font-size: 18px;
+  }
+}
+
+.section-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  & h3 {
+    font-size: 36px;
+  }
+  & span {
+    font-size: 14px;
+    color: #404040;
+  }
+}
+
+.view-all-btn {
+  background-color: transparent;
+  border: 1px solid #4169e1;
+  border-radius: 30px;
+  color: #4169e1;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(0.95);
+  }
+}
+
+.stories-container {
+  width: 100%;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 48% 48%;
+  justify-content: space-between;
+}
+
+.story-component {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  & > img {
+    border-radius: 32px;
+  }
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  color: #5b5b5b;
+  font-size: 18px;
+}
+
+.story-title {
+  font-size: 26px;
+}
+
+.short-story {
+  font-size: 14px;
+}
+
+.full-post-link {
+  text-decoration: none;
+  color: #4169e1;
+  font-size: 18px;
+}
