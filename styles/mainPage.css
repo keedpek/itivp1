@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Euclid";
-  src: url("./fonts/euclid-flex.ttf") format("truetype");
+  src: url("../fonts/euclid-flex.ttf") format("truetype");
 }
 
 * {
@@ -10,53 +10,6 @@
   font-family: "Euclid";
 }
 
-header {
-  display: flex;
-  position: absolute;
-  width: 100%;
-  height: 80px;
-  z-index: 100;
-  background: transparent;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 5%;
-  & > p {
-    color: #fff;
-    border: 1px solid #fff;
-    padding: 10px 20px;
-    border-radius: 50px;
-  }
-}
-
-button:focus {
-  outline: 1px solid #dadada;
-}
-
-.header-nav-menu > ul {
-  list-style: none;
-  color: #fff;
-  font-size: 14pt;
-  display: flex;
-  gap: 25px;
-}
-
-.header-signup-btn {
-  padding: 10px 20px;
-  border: none;
-  color: #fff;
-  font-size: 14pt;
-  background: transparent;
-}
-
-.header-signin-btn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  color: #000;
-  background: #fff;
-  font-size: 14pt;
-}
-
 .main-section-container {
   width: 100%;
   height: 760px;
@@ -64,7 +17,7 @@ button:focus {
   align-items: center;
   justify-content: center;
   background-size: 100% 100%;
-  background-image: url("./images/main-background.png");
+  background-image: url("../images/main-background.png");
   position: relative;
   &::before {
     content: " ";
@@ -159,18 +112,4 @@ button:focus {
 
 .country-component > h4 {
   font-size: 26px;
-}
-
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  height: 300px;
-  background-color: #4169e1;
-}
-
-.footer-copyright {
-  color: #fff;
 }
