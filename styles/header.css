@@ -62,6 +62,7 @@ a {
   cursor: pointer;
   border: none;
   background-color: transparent;
+  z-index: 100;
 }
 
 .burger-menu span {
