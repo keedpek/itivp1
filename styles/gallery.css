@@ -25,7 +25,7 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 900px;
+    height: 100%;
     background-color: #0000002b;
   }
 }
@@ -55,7 +55,6 @@
   }
 }
 
-/* Стили для модального окна */
 .modal {
   display: none;
   position: fixed;
@@ -82,4 +81,39 @@
   color: white;
   font-size: 40px;
   cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .gallery-main-section {
+    height: 600px;
+  }
+
+  .main-section-text-container h1 {
+    font-size: 30pt;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-main-section {
+    height: 400px;
+  }
+
+  .main-section-text-container h1 {
+    font-size: 32pt;
+  }
+
+  .gallery-container {
+    justify-items: center;
+    grid-template-columns: 100%;
+  }
+}
+
+@media (max-width: 428px) {
+  .gallery-main-section {
+    height: 300px;
+  }
+
+  .main-section-text-container h1 {
+    font-size: 32pt;
+  }
 }

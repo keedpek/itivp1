@@ -91,6 +91,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: fit-content;
   padding: 10px 5% 50px;
   gap: 20px;
   & h3 {
@@ -108,4 +109,58 @@
   display: flex;
   gap: 30px;
   align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .about-me-main-section {
+    height: 300px;
+  }
+  .text p,
+  li {
+    font-size: 18px;
+  }
+  .photos {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .info {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .text {
+    width: 100%;
+  }
+
+  .social {
+    gap: 5px;
+  }
+
+  .social svg {
+    width: 50px;
+  }
+
+  .social a {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 428px) {
+  .about-me-main-section {
+    height: 200px;
+  }
+
+  .socials {
+    gap: 5px;
+  }
+
+  .social svg {
+    width: 20px;
+  }
+
+  .social a {
+    font-size: 12px;
+  }
 }
