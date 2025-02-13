@@ -19,26 +19,28 @@
   background-size: 100% 100%;
   background-image: url("../images/stories-main-bg.png");
   position: relative;
-  &::before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #0000002b;
-  }
+}
+
+.stories-page-main-section::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0000002b;
 }
 
 .main-section-text-container {
   text-align: center;
   width: 70%;
   z-index: 10;
-  & > h2 {
-    color: #fff;
-    font-weight: 800;
-    font-size: 40pt;
-  }
+}
+
+.main-section-text-container > h2 {
+  color: #fff;
+  font-weight: 800;
+  font-size: 40pt;
 }
 
 .stories-section {
@@ -48,12 +50,13 @@
   padding: 50px 5%;
   gap: 40px;
   margin-bottom: 100px;
-  & > h2 {
-    background: linear-gradient(135deg, #5c7bd8 0%, #4169e1 100%);
-    background-clip: text;
-    color: transparent;
-    font-size: 18px;
-  }
+}
+
+.stories-section > h2 {
+  background: linear-gradient(135deg, #5c7bd8 0%, #4169e1 100%);
+  background-clip: text;
+  color: transparent;
+  font-size: 18px;
 }
 
 .section-header {
@@ -61,13 +64,15 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  & h3 {
-    font-size: 36px;
-  }
-  & span {
-    font-size: 14px;
-    color: #404040;
-  }
+}
+
+.section-header h3 {
+  font-size: 36px;
+}
+
+.section-header span {
+  font-size: 14px;
+  color: #404040;
 }
 
 .view-all-btn {
@@ -78,9 +83,10 @@
   padding: 10px;
   cursor: pointer;
   transition: transform 0.3s;
-  &:hover {
-    transform: scale(0.95);
-  }
+}
+
+.view-all-btn:hover {
+  transform: scale(0.95);
 }
 
 .stories-container {
@@ -96,9 +102,10 @@
   flex-direction: column;
   gap: 15px;
   width: 100%;
-  & > img {
-    border-radius: 32px;
-  }
+}
+
+.story-component > img {
+  border-radius: 32px;
 }
 
 .meta {
