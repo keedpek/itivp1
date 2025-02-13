@@ -97,9 +97,14 @@
 }
 
 .section-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .section-filter-select {
+  padding: 10px 20px;
+  border-radius: 40px;
 }
 
 .sights-list {

@@ -122,6 +122,48 @@
   font-size: 18px;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.pagination button,
+.pagination span {
+  padding: 8px 12px;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+.pagination button:hover {
+  background-color: #4169e1;
+  color: white;
+  cursor: pointer;
+}
+
+.pagination .active {
+  background-color: #4169e1;
+  color: white;
+  border: none;
+}
+
+.pagination .prev,
+.pagination .next {
+  font-weight: bold;
+}
+
+.pagination span {
+  border: none;
+  color: #666;
+}
+
 @media (max-width: 1024px) {
   .stories-page-main-section {
     height: 600px;
