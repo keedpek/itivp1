@@ -8,6 +8,10 @@ footer {
   background-color: #4169e1;
 }
 
+footer > img {
+  width: 70px;
+}
+
 .footer-copyright {
   color: #fff;
 }
