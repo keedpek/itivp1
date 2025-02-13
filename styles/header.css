@@ -99,6 +99,13 @@ a {
   text-decoration: none;
 }
 
+@media (max-width: 1024px) {
+  .header-nav-menu ul {
+    gap: 15px;
+    font-size: 12pt;
+  }
+}
+
 @media (max-width: 768px) {
   .header-nav-menu {
     display: none;
@@ -110,12 +117,5 @@ a {
 
   .header-buttons {
     display: none;
-  }
-}
-
-@media (max-width: 1024px) {
-  .header-nav-menu ul {
-    gap: 15px;
-    font-size: 12pt;
   }
 }
