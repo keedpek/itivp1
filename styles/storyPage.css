@@ -162,15 +162,27 @@
     font-size: 14px;
   }
 
-  .story h3 {
+  .story > h3 {
     font-size: 28px;
   }
 
-  .story h4 {
+  .story > h4 {
     font-size: 18px;
   }
 
-  .story p {
+  .story > p {
+    font-size: 12px;
+  }
+
+  .nickname {
+    font-size: 16px;
+  }
+
+  .date {
+    font-size: 14px;
+  }
+
+  .comment {
     font-size: 12px;
   }
 }
