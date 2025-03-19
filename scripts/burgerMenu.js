@@ -5,7 +5,5 @@ document.addEventListener("DOMContentLoaded", function () {
   menuBtn.addEventListener('click', () => {
     menuBtn.classList.toggle("active");
     menu.style.display = menu.style.display === "block" ? "none" : "block";
-    console.log(1);
-    
   })
 })

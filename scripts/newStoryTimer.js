@@ -23,5 +23,5 @@ function createNewStory(innerHtml) {
   container.appendChild(newStory)
   console.log(newStory);
   
-  alert('new story is available now!!!')
+  alert('Новая история уже доступна!!!')
 }
