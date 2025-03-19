@@ -49,13 +49,20 @@
   padding: 50px 5%;
   gap: 40px;
   grid-template-columns: 32% 32% 32%;
+  flex-wrap: wrap;
 }
 
 .gallery-container img,
 video {
   border-radius: 30px;
   max-width: 100%;
-  cursor: pointer;
+  cursor: grab;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-container img:hover,
+.gallery-container video:hover {
+  opacity: 0.8; /* Небольшая прозрачность при наведении */
 }
 
 .modal {

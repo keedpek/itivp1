@@ -1,61 +1,47 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const galleryContainer = document.querySelector(".gallery-container");
-  const galleryItems = document.querySelectorAll(".gallery-img");
-  let draggedItem = null;
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryContainer = document.querySelector('.gallery-container')
+  let draggedElement = null
+
+  const items = document.querySelectorAll('.gallery-img, video')
+  items.forEach(item => {
+    item.addEventListener('dragstart', e => dragStart(e))
+    item.addEventListener('dragend', e => dragEnd(e))
+  })
+
+  galleryContainer.addEventListener('drop', e => dropItem(e))
+  galleryContainer.addEventListener('dragover', (e) => {
+    e.preventDefault()
+  })
+
   
-  galleryItems.forEach((item) => {
-    item.addEventListener("dragstart", e => dragstart(e));
-    item.addEventListener("dragend", dragend);
-  });
+  function dragStart(e) {
+    draggedElement = e.target
+    setTimeout(() => {
+      e.target.style.opacity = '0.5'
+    }, 0)
+  }
 
-  // Обработка событий на контейнере
-  galleryContainer.addEventListener("dragover", (e) => {
-    e.preventDefault(); // Разрешаем drop
-  });
+  function dragEnd(e) {
+    setTimeout(() => {
+      e.target.style.opacity = '1'
+    }, 0)
+    draggedElement = null
+  }
 
-  galleryContainer.addEventListener("dragenter", (e) => {
-    if (e.target.classList.contains("gallery-img")) {
-      e.target.classList.add("over");
-    }
-  });
-
-  galleryContainer.addEventListener("dragleave", (e) => {
-    if (e.target.classList.contains("gallery-img")) {
-      e.target.classList.remove("over");
-    }
-  });
-
-  galleryContainer.addEventListener("drop", (e) => {
+  function dropItem(e) {
     e.preventDefault();
-    if (e.target.classList.contains("gallery-img") && draggedItem !== e.target) {
-      // Меняем местами элементы
-      const parent = galleryContainer;
-      const draggedIndex = Array.from(parent.children).indexOf(draggedItem);
-      const targetIndex = Array.from(parent.children).indexOf(e.target);
+    if (draggedElement && draggedElement !== e.target) {
+      const targetIndex = Array.from(galleryContainer.children).indexOf(e.target)
+      const draggedIndex = Array.from(galleryContainer.children).indexOf(draggedElement)
 
-      if (draggedIndex < targetIndex) {
-        parent.insertBefore(draggedItem, e.target.nextSibling);
-      } else {
-        parent.insertBefore(draggedItem, e.target);
+      if (targetIndex > -1 && draggedIndex > -1) {
+        const children = Array.from(galleryContainer.children)
+        children.splice(draggedIndex, 1)
+        children.splice(targetIndex, 0, draggedElement)
+
+        galleryContainer.innerHTML = ''
+        children.forEach(child => galleryContainer.appendChild(child))
       }
     }
-
-    // Удаляем класс over
-    e.target.classList.remove("over");
-  });
-});
-
-function dragstart(e) {
-  draggedItem = e.target;
-  setTimeout(() => {
-    e,target.preventDefault()
-    e.target.classList.add("dragging");
-  }, 0);
-}
-
-function dragend() {
-  setTimeout(() => {
-    draggedItem.classList.remove("dragging");
-    draggedItem = null;
-  }, 0);
-}
+  }
+})
