@@ -31,14 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function dropItem(e) {
     e.preventDefault();
     if (draggedElement && draggedElement !== e.target) {
-      const targetIndex = Array.from(galleryContainer.children).indexOf(e.target)
-      const draggedIndex = Array.from(galleryContainer.children).indexOf(draggedElement)
+      const children = Array.from(galleryContainer.children)
+      const targetIndex = children.indexOf(e.target)
+      const draggedIndex = children.indexOf(draggedElement)
 
       if (targetIndex > -1 && draggedIndex > -1) {
-        const children = Array.from(galleryContainer.children)
-        children.splice(draggedIndex, 1)
-        children.splice(targetIndex, 0, draggedElement)
-
+        [children[targetIndex], children[draggedIndex]] = [children[draggedIndex], children[targetIndex]];
         galleryContainer.innerHTML = ''
         children.forEach(child => galleryContainer.appendChild(child))
       }
